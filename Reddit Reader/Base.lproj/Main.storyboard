@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="din-hp-5fx">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reddit r/swfit-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RedditReaderVC" customModule="Reddit_Reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EDI-C4-d7V">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OlG-ui-ANS">
+                                <rect key="frame" x="16" y="103" width="361" height="715"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="715" id="aYT-eb-vMF"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ALL-Bo-PQT">
+                                    <size key="itemSize" width="361" height="273"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="readerCell" id="aKV-nb-CUg" customClass="RedditReaderCVC" customModule="Reddit_Reader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="268"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Vvb-nM-Zkd">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="268"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9K-7N-dSp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="361" height="268"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KsZ-pF-g21">
+                                                            <rect key="frame" x="8" y="16" width="345" height="18"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UJ-62-5zu">
+                                                            <rect key="frame" x="8" y="44.666666666666664" width="345" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t05-eG-lyz">
+                                                            <rect key="frame" x="8" y="112" width="345" height="140"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="345" id="4Ay-C5-S7Y"/>
+                                                                <constraint firstAttribute="height" constant="140" id="OGX-v0-4uU"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="KsZ-pF-g21" firstAttribute="top" secondItem="O9K-7N-dSp" secondAttribute="top" constant="16" id="8ks-Gz-Wdi"/>
+                                                        <constraint firstItem="0UJ-62-5zu" firstAttribute="top" secondItem="KsZ-pF-g21" secondAttribute="bottom" constant="9.3333333333333357" id="D9d-Zc-aGZ"/>
+                                                        <constraint firstAttribute="height" constant="268" id="QVS-ep-F1f"/>
+                                                        <constraint firstItem="t05-eG-lyz" firstAttribute="top" secondItem="O9K-7N-dSp" secondAttribute="top" constant="112" id="Sm0-u2-Vae"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0UJ-62-5zu" secondAttribute="trailing" constant="8" id="WTv-ny-pH9"/>
+                                                        <constraint firstItem="KsZ-pF-g21" firstAttribute="leading" secondItem="O9K-7N-dSp" secondAttribute="leading" constant="8" id="XLV-sO-LEM"/>
+                                                        <constraint firstItem="t05-eG-lyz" firstAttribute="leading" secondItem="O9K-7N-dSp" secondAttribute="leading" constant="8" id="eCT-Wt-g41"/>
+                                                        <constraint firstItem="0UJ-62-5zu" firstAttribute="leading" secondItem="O9K-7N-dSp" secondAttribute="leading" constant="8" id="j4R-iF-t3K"/>
+                                                        <constraint firstAttribute="width" constant="361" id="ls0-yh-jlx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="t05-eG-lyz" secondAttribute="trailing" constant="8" id="vGz-1h-RT1"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="O9K-7N-dSp" secondAttribute="trailing" id="9nB-qQ-8FV"/>
+                                                <constraint firstItem="O9K-7N-dSp" firstAttribute="top" secondItem="Vvb-nM-Zkd" secondAttribute="top" id="kiJ-Aw-y6k"/>
+                                                <constraint firstItem="O9K-7N-dSp" firstAttribute="leading" secondItem="Vvb-nM-Zkd" secondAttribute="leading" id="neR-BE-a4w"/>
+                                                <constraint firstItem="O9K-7N-dSp" firstAttribute="centerY" secondItem="Vvb-nM-Zkd" secondAttribute="centerY" id="viD-Mb-8ys"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="361" height="268"/>
+                                        <connections>
+                                            <outlet property="imgThumbnail" destination="t05-eG-lyz" id="VNf-fl-n0Y"/>
+                                            <outlet property="lblDescription" destination="0UJ-62-5zu" id="pHg-CJ-Gma"/>
+                                            <outlet property="lblTitle" destination="KsZ-pF-g21" id="4aN-GX-KFT"/>
+                                            <outlet property="viewContainer" destination="O9K-7N-dSp" id="zkR-yL-Vfj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="inu-Za-fY9"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aLA-sh-3Ue"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NlJ-IC-95t"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstItem="OlG-ui-ANS" firstAttribute="leading" secondItem="NlJ-IC-95t" secondAttribute="leading" constant="16" id="Vs5-K9-9up"/>
+                            <constraint firstItem="NlJ-IC-95t" firstAttribute="trailing" secondItem="OlG-ui-ANS" secondAttribute="trailing" constant="16" id="Yr1-7i-pCK"/>
+                            <constraint firstItem="OlG-ui-ANS" firstAttribute="centerX" secondItem="EDI-C4-d7V" secondAttribute="centerX" id="avY-HJ-Uf1"/>
+                            <constraint firstItem="OlG-ui-ANS" firstAttribute="bottom" secondItem="NlJ-IC-95t" secondAttribute="bottom" id="dIG-xJ-8WN"/>
+                            <constraint firstItem="OlG-ui-ANS" firstAttribute="top" secondItem="NlJ-IC-95t" secondAttribute="top" id="gRw-as-U9Z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Reddit r/swfit" id="8b8-nL-FJ8"/>
+                    <connections>
+                        <outlet property="RedditReaderCollectionView" destination="OlG-ui-ANS" id="lA0-Ix-Gb0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1046.5648854961833" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="YJJ-rm-TRH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="din-hp-5fx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VhM-hy-mbw">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="o2k-Se-OBf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uyu-w9-ssz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.84732824427481" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
