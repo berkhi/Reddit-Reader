@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct RedditPost: Codable {
     struct Data: Codable {

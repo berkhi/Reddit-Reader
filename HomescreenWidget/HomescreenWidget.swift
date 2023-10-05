@@ -26,26 +26,28 @@ struct Provider: TimelineProvider {
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
 
-        if let readers = Reader.shared.readers, !readers.isEmpty {
-            var firstThreeTitles: [String] = []
+        let defaultEntry = SimpleEntry(date: .now, title: "Loading...")
+        entries.append(defaultEntry)
 
-            for i in 0..<min(3, readers.count) {
-                let reader = readers[i]
-                let title = reader.title ?? "Title-not-found"
-                firstThreeTitles.append(title)
+        Reader().fetchData { data in
+            if let data = data {
+                var firstThreeTitles: [String] = []
+
+                for i in 0..<min(3, data.count) {
+                    let reader = data[i]
+                    let title = reader.title ?? "Title-not-found"
+                    firstThreeTitles.append(title)
+                }
+
+                let title = firstThreeTitles.joined(separator: ", ")
+                let entry = SimpleEntry(date: .now, title: title, firstThreeEntries: firstThreeTitles)
+                entries[0] = entry
+                print(entries)
+
+                let timeline = Timeline(entries: entries, policy: .atEnd)
+                completion(timeline)
             }
-
-            let title = firstThreeTitles.joined(separator: ", ")
-            let entry = SimpleEntry(date: .now, title: title, firstThreeEntries: firstThreeTitles)
-            entries.append(entry)
-            print(entries)
-        } else {
-            let entry = SimpleEntry(date: .now, title: "No-title-available")
-            entries.append(entry)
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 

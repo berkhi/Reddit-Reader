@@ -12,7 +12,7 @@ class Reader {
     static let shared = Reader()
     var readers: [RedditPost.Data.Child.PostData]?
     
-    private init(readers: [RedditPost.Data.Child.PostData]? = nil) {
+    public init(readers: [RedditPost.Data.Child.PostData]? = nil) {
         fetchData { [weak self] data in
             self?.readers = data
         }
